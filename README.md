@@ -58,27 +58,27 @@ REACT_APP_API_URL=your_aoo_url
 ```bash
 https://github.com/GAGGZ1/Travel-Story.git
 cd travel-story
-
-
+```
 ⸻
 
 2. Backend Setup
-
+```
 cd backend
 npm install
 # Add your .env file
 npm start
-
+```
 
 ⸻
 
 3. Frontend Setup
 
+```
 cd frontend
 npm install
 # Add your .env file
 npm start
-
+```
 
 ⸻
 
