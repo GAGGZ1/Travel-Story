@@ -1,28 +1,31 @@
 
+
 # 📸 Travel Story
 
 A full-stack MERN application where users can create, view, edit, search, and filter travel stories with images, descriptions, and visited dates.
+
+---
 
 ## 🧰 Tech Stack
 
 **Frontend:** React, Tailwind CSS, Axios, React Icons, React Day Picker  
 **Backend:** Node.js, Express.js, MongoDB, Mongoose, JWT Auth  
-**Image Upload:** Multer  
-
+**Image Upload:** Multer
 
 ---
 
-## 📁 Project Structure
 
+
+## 📁 Project Structure
+```
 Travel-story/
-│
-├── backend/               # Express server & MongoDB models
-├── frontend/              # React app
+├── backend/         # Express server & MongoDB models
+├── frontend/        # React app
 ├── .gitignore
 ├── README.md
 └── .env.example
 
----
+```
 
 ## 🚀 Features
 
@@ -37,28 +40,28 @@ Travel-story/
 
 ---
 
-
 ## ⚙️ Environment Variables
 
-### Backend `.env`
-
+### 🔒 Backend `.env`
+```
 ACCESS_TOKEN_SECRET=your_secret_key
 MONGO_URI=your_mongodb_connection_string
-
-### Frontend `.env`
-
-REACT_APP_API_URL=your_aoo_url
-
+```
+### 🌐 Frontend `.env`
+```
+REACT_APP_API_URL=your_api_url
+```
 ---
 
 ## 📦 Setup Instructions
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-https://github.com/GAGGZ1/Travel-Story.git
+git clone https://github.com/GAGGZ1/Travel-Story.git
 cd travel-story
 ```
+
 ⸻
 
 2. Backend Setup
@@ -72,57 +75,54 @@ npm start
 ⸻
 
 3. Frontend Setup
-
 ```
 cd frontend
 npm install
 # Add your .env file
 npm start
-```
 
+```
 ⸻
 
-🧪 API Endpoints (Backend)
-
+🧪 API Endpoints
+```
 Method	Endpoint	Description
 POST	/create-account	Register a new user
 POST	/login	Login and get JWT token
-GET	/get-user	Get user info (auth required)
+GET	/get-user	Get user info (auth)
 POST	/add-travel-story	Add a new travel story
 PUT	/edit-story/:id	Edit existing story
 DELETE	/delete-story/:id	Delete story
 GET	/get-all-stories	Fetch all user stories
 GET	/search?query=	Search stories
 GET	/travel-stories/filter	Filter stories by date
-PUT	/update-is-favourite/:id	Toggle favourite
-
+PUT	/update-is-favourite/:id	Toggle favourite status
+```
 
 ⸻
 
 🔐 Authentication
-	•	Uses JWT for protected routes.
-	•	Frontend stores token in localStorage.
+```
+	•	Uses JWT for protected routes
+	•	Token is stored in localStorage on the frontend
+```
 
 ⸻
 
 🛡️ Security Features
-	•	Passwords are hashed with bcrypt
-	•	API routes are protected using JWT middleware
-	•	Input validation and sanitization included
+```
+	•	Passwords are hashed using bcrypt
+	•	Routes are secured with JWT middleware
+	•	Input validation and error handling implemented
+```
 
 ⸻
 
-📤 Deployment
 
-Deployed with Render:
-	•	Frontend: Static site with npm run build
-	•	Backend: Web service with Express
-
-⸻
 
 🙋‍♂️ Author
 
 Gagan Chauhan
-https://github.com/GAGGZ1
-https://www.linkedin.com/in/gaganchauhan/
+[GitHub - GAGGZ1](https://github.com/GAGGZ1)
+[LinkedIn - gaganchauhan](https://www.linkedin.com/in/gaganchauhan/)
 
