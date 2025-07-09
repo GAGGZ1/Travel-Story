@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const config = require("./config.json");
+mongoose.connect(process.env.MONGO_URI);
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const express = require("express");
@@ -16,7 +16,7 @@ const { authenticationToken } = require("./utilities");
 const User = require("./models/user.model");
 const TravelStory = require("./models/travelStory.model");
 
-mongoose.connect(config.connectionString);
+// mongoose.connect(config.connectionString);
 
 const app = express();
 app.use(express.json());
@@ -488,8 +488,8 @@ app.get("/travel-stories/filter", authenticationToken, async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("Server running on http://localhost:8000");
-});
+// app.listen(8000, () => {
+//   console.log("Server running on http://localhost:8000");
+// });
 
 module.exports = app;
