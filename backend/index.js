@@ -1,7 +1,8 @@
 require("dotenv").config();
 
-mongoose.connect(process.env.MONGO_URI);
+
 const mongoose = require("mongoose");
+mongoose.connect(process.env.MONGO_URI);
 const bcrypt = require("bcrypt");
 const express = require("express");
 const cors = require("cors");
