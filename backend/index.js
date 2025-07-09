@@ -2,7 +2,9 @@ require("dotenv").config();
 
 
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log("✅ Connected to MongoDB Atlas"))
+  .catch((err) => console.error("❌ MongoDB connection error:", err));
 const bcrypt = require("bcrypt");
 const express = require("express");
 const cors = require("cors");
