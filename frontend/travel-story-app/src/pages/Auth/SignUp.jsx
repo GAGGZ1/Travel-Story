@@ -3,6 +3,7 @@ import PasswordInput from "../../components/Input/PasswordInput";
 import { useNavigate } from "react-router-dom";
 import { validateEmail } from "../../utils/helper.js";
 import axiosInstance from "../../utils/axiosInstance.js";
+import bgImage2 from '../../assets/images/sign-up-img.jpg';
 
 const Signup = () => {
   const [fullName, setFullName] = useState("");
@@ -55,7 +56,8 @@ const Signup = () => {
       <div className="login-ui-box bg-cyan-200 -bottom-40 right-1/2" />
 
       <div className="container h-screen flex items-center justify-center px-20 mx-auto">
-        <div className="w-2/4 h-[90vh] flex items-start bg-signup-bg-img bg-cover bg-center rounded-lg p-10 z-50">
+        <div className="w-2/4 h-[90vh] flex items-start bg-cover bg-center rounded-lg p-10 z-50"
+  style={{ backgroundImage: `url(${bgImage2})` }}>
           <div>
             <h4 className="text-5xl text-black font-semibold leading-[58px]">
               Join the <br />
