@@ -137,7 +137,10 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
     const baseURL = process.env.BASE_URL || `${req.protocol}://${req.get("host")}`;
 const imageUrl = `${baseURL}/uploads/${req.file.filename}`;
 
-    res.status(201).json({ imageUrl });
+  res.status(201).json({
+  imageUrl,
+  filename: req.file.filename, 
+});
   } catch (error) {
     res.status(500).json({
       error: true,

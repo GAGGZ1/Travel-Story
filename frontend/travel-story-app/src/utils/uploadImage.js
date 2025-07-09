@@ -1,4 +1,3 @@
-// utils/uploadImage.js
 import axiosInstance from "./axiosInstance";
 import { BASE_URL } from "./constants";
 
@@ -17,15 +16,19 @@ const uploadImage = async (imageFile) => {
       }
     );
 
-    // Assuming response includes { imageName: 'xyz.jpg' }
-    const imageName = response.data.imageName || response.data.filename || "";
+    console.log("📷 Image Upload Response:", response.data);
+
+    const imageName = response.data.filename || response.data.imageName || "";
+
+    const finalUrl = `${BASE_URL}/uploads/${imageName}`;
+    console.log("🧩 Final constructed imageUrl:", finalUrl);
 
     return {
       ...response.data,
-      imageUrl: `${BASE_URL}/uploads/${imageName}`,
+      imageUrl: finalUrl,
     };
   } catch (error) {
-    console.error("Error uploading the image:", error);
+    console.error("❌ Error uploading the image:", error.response?.data || error.message);
     throw error;
   }
 };
