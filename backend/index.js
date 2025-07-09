@@ -133,7 +133,9 @@ app.post("/image-upload", upload.single("image"), async (req, res) => {
       });
     }
 
-    const imageUrl = `http://localhost:8000/uploads/${req.file.filename}`;
+    // const imageUrl = `http://localhost:8000/uploads/${req.file.filename}`;
+    const baseURL = process.env.BASE_URL || `${req.protocol}://${req.get("host")}`;
+const imageUrl = `${baseURL}/uploads/${req.file.filename}`;
 
     res.status(201).json({ imageUrl });
   } catch (error) {
