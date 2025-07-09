@@ -1,8 +1,9 @@
+// utils/uploadImage.js
 import axiosInstance from "./axiosInstance";
+import { BASE_URL } from "./constants";
 
 const uploadImage = async (imageFile) => {
-  const formData = new FormData(); 
-  // Append image file to form data
+  const formData = new FormData();
   formData.append("image", imageFile);
 
   try {
@@ -11,15 +12,21 @@ const uploadImage = async (imageFile) => {
       formData,
       {
         headers: {
-          "Content-Type": "multipart/form-data", 
+          "Content-Type": "multipart/form-data",
         },
       }
     );
 
-    return response.data;
+    // Assuming response includes { imageName: 'xyz.jpg' }
+    const imageName = response.data.imageName || response.data.filename || "";
+
+    return {
+      ...response.data,
+      imageUrl: `${BASE_URL}/uploads/${imageName}`,
+    };
   } catch (error) {
     console.error("Error uploading the image:", error);
-    throw error; // Rethrow error for handling
+    throw error;
   }
 };
 
