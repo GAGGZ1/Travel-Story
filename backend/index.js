@@ -273,7 +273,8 @@ app.put("/edit-story/:id", authenticationToken, async (req, res) => {
     }
 
     // Placeholder fallback if imageUrl is empty or null
-    const placeholderImgUrl = `http://localhost:8000/assets/placeholder.png`;
+    // const placeholderImgUrl = `http://localhost:8000/assets/placeholder.png`;
+    const imageUrl = `${req.protocol}://${req.get("host")}/uploads/${req.file.filename}`;
 
     // Update fields
     travelStory.title = title;
